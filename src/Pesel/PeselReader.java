@@ -1,20 +1,22 @@
+package Pesel;
+
 import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class PeselReader {
+public class PeselReader implements PeselReaderInterface {
 
     private long readedPesel;
     private LinkedList<Integer> pesel;
 
-    public LinkedList<Integer> getPesel() {
-        return pesel;
-    }
-
     public PeselReader() {
         this.readedPesel = readPesel();
         this.pesel = convertToIntArray(readedPesel);
+    }
+
+    public LinkedList<Integer> getPesel() {
+        return pesel;
     }
 
     private long readPesel() {
