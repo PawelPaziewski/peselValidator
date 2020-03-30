@@ -33,7 +33,7 @@ public class PeselReader implements PeselReaderInterface {
                 readed = false;
                 scanner.nextLine();
             }
-        } while (!readed || pesel > 99999999999L);
+        } while (!readed || pesel > 99999999999L || pesel<10000000000L);
         return pesel;
     }
 
